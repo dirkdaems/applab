@@ -37,8 +37,8 @@ parser.add_argument('-out',       action='store', dest='output',    required=Tru
 
 results = parser.parse_args()
 
-dt1 = datetime.strptime(results.startdate, "%Y%m%d");
-dt2 = datetime.strptime(results.enddate, "%Y%m%d");
+dt1 = datetime.datetime.strptime(results.startdate, "%Y%m%d");
+dt2 = datetime.datetime.strptime(results.enddate, "%Y%m%d");
 
 # Create output directory if not yet existing
 mkdir(os.path.dirname(results.output))
