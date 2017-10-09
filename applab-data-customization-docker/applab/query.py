@@ -55,7 +55,7 @@ for product in products:
     fn = product.files[0].filename
 
     if fn.startswith("file:"):
-        fn = 'file://' + inputfile[5:]
+        fn = 'file://' + fn[5:]
 
     print fn
 
