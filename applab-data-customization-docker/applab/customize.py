@@ -1,5 +1,6 @@
 #!/env/python
 
+import os
 import sys
 import argparse
 import commands
@@ -126,7 +127,7 @@ if input.startswith("file://"):
     input = results.input[7:]
 
 # Perform customization
-status, output = execute( ["gdal_translate", "-of", "GTiff", "-projwin", results.tlx, results.tly, results.brx, results.bry, 'NETCDF:"%s":%s' % (input, sds), results.output] );
+status, output = execute( ["gdal_translate", "-of", "GTiff", "-projwin", "%.5f" % results.tlx, "%.5f" % results.tly, "%.5f" % results.brx, "%.5f" % results.bry, 'NETCDF:"%s":%s' % (input, sds), results.output] );
 
 print output
 sys.exit(status);
